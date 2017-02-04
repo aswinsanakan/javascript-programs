@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions</title>
+</head>
+<body>
+	
+	<span id="n1">11</span> <span id="operator">+</span> <span id="n2">9</span> = <span id="result"> </span>
+
+	<script>
+
+		//function to read values from HTML and calculate and return the value
+		function arithematic(n1,n2,operator){
+			if (operator == "+"){
+				return (Number(n1) + Number(n2));
+			} else if (operator == "-") {
+				return (Number(n1) - Number(n2));
+			} else if (operator == "*") {
+				return (Number(n1) * Number(n2));
+			} else if (operator == "/") {
+				return (Number(n1) / Number(n2));
+			} else {
+				return "Invalid";
+			}
+		}
+		var n1 = document.getElementById("n1").innerHTML;
+		var n2 = document.getElementById("n2").innerHTML;
+		var operator = document.getElementById("operator").innerHTML;
+		var output = document.getElementById("result");
+
+		var result = arithematic(n1,n2,operator);
+		output.innerHTML = result;
+
+
+		//function to add numbers and display on console
+
+		function add(){
+			console.log(10 + 20)
+		}
+		add(); // () used to invoke function
+
+		function sub(n1,n2){
+			console.log(n2 - n1);
+		}
+		sub(20,10);
+
+		function mul(n1,n2,n3){
+			console.log(n1 * n2 * n3)
+		}
+		mul(10,30); // here you can pass less arguments than defined in function, additional parameters are not assigned values and will be undefined. Therefore output will be NaN (Not a Number)
+
+		function div(n1,n2){
+			console.log(n2 / n1);
+		}
+		div(20,10,5); //any additional arguments passed will be rejected by the function
+	
+	</script>
+</body>
+</html>

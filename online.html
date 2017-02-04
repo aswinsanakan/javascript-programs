@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Check online</title>
+</head>
+<body>
+	<p id="status" align="center">You are online</p>
+</body>
+<script>
+	function checkStatus(){
+		var status = document.getElementById("status");
+		if (navigator.onLine){
+			status.innerHTML = "You are online";
+		} else {
+			status.innerHTML = "You are offline";
+		}
+	}
+	setInterval(checkStatus,3000);
+</script>
+</html>

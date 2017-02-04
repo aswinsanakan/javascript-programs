@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript</title>
+</head>
+<body>
+	<h1>My Task List</h1>
+	<p>All the latest tasks to be done</p>
+	<ul id="myTasks">
+		<li>Get Milk</li>
+		<li>Wash Car</li>
+		<li>Pay Bills</li>
+	</ul>
+	<button id="msg">
+		Click Me
+	</button>
+	<script>
+	var buttonClick = document.getElementById("msg");
+	buttonClick.onclick = function() {
+		var name = prompt("Enter your name");
+		alert("Welcome " + name)
+	};
+	</script>
+
+</body>
+</html>

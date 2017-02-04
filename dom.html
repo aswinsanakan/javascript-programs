@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM HTML</title>
+</head>
+<body>
+	<h2>DOM -Document Object Model</h2>
+	<p id="intro">Important concept for js developers</p>
+	<h3>What you can do with DOM?</h3>
+	<ul>
+		<li>Change images on the fly.</li>
+		<li>Fetch details from the server without reloading the page</li>
+		<li>Add css to elements without reloading page</li>
+	</ul>
+
+	<div id="logo">
+		<img src="https://www.dctacademy.com/wp-content/uploads/2016/03/dct-final.jpg" alt="DCT Logo">
+	</div>
+
+	<script>
+		var introHandle = document.getElementById('intro');
+		introHandle.innerHTML = "Javasccript Developers need to Know"
+		var listItems = document.getElementsByTagName('li'); //returns an array
+		console.log(listItems);
+	</script>
+</body>
+</html>

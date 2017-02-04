@@ -1,0 +1,47 @@
+
+<!-- Find the smallest number in an array
+
+Given ana array of integers your solution should find the smallest integer. Ex:
+Given [34,15,88,2] your solution will return 2
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Smallest Number</title>
+</head>
+<body>
+
+<script>
+	//find smallest
+	var numbers = [34,15,88,-2];
+	var smallest = numbers[0];
+	numbers.forEach(function(number){
+		if (number < smallest){
+			smallest = number;
+		}
+	})
+	console.log("Smallest is " + smallest)
+
+	//return highest and lowest
+	function highAndLow(string){
+		nums = string.split(' ');
+		high = low = nums[0];
+		nums.forEach(function(num){
+			if (num > high){
+				high = num;
+			} else if (num < low){
+				low = num;
+			}
+		})
+		result = [high,low];
+		return result.join(' ');
+	}
+	var string = "1 -4 3 0 9 5";
+	var output = highAndLow(string);
+	console.log(output);
+</script>	
+	
+</body>
+</html>

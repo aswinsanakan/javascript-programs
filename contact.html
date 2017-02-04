@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Form</title>
+</head>
+<body>
+	<h2>Send us an enquiry</h2>
+	<form id="contactForm">
+		<label>Name :</label>
+		<input type="text" id="name"> <br>
+
+		<label>Course Enquiry?</label>
+		<input type="checkbox" id="course"> <br>
+
+		<div id="courseDetails">
+			<label>Select Course</label> <br>
+			<select id="selectCourse">
+				<option value="ror">Ruby on Rails</option>
+				<option value="wd">Web Development</option>
+			</select>
+		</div>
+
+		<label>Message :</label>
+		<input type="text" id="message"> <br>
+
+		<input type="submit" value="Send Enquiry">
+	</form>
+
+
+	<script>
+		var courseHandle = document.getElementById('course');
+		var courseDetailHandle = document.getElementById('courseDetails');
+		var selectCourseHandle = document.getElementById('selectCourse');
+		var contactFormHandle = document.getElementById('contactForm');
+
+		function toggleCourseDetails(){
+			if (courseHandle.checked) {
+				courseDetailHandle.style.display = "block";
+			}else{
+				courseDetailHandle.style.display = "none";
+			}
+		} 
+
+		selectCourseHandle.onchange = function (){
+			alert(selectCourseHandle.options[selectCourseHandle.selectedIndex].value);
+		};
+
+		courseHandle.onclick = function (){
+			toggleCourseDetails(); //when event fires
+		};
+
+		//courseHandle.onclick = toggleCourseDetails();
+
+		toggleCourseDetails(); //when page loads
+
+		contactFormHandle.onsubmit = function(e){
+			console.log(e);
+		};
+
+	</script>
+</body>
+</html>

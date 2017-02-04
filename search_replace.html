@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Numbers 2: search and find</title>
+</head>
+<body>
+
+<script>
+	//search position
+	var sentence = prompt("Enter a  sentence :");
+	var search = prompt("Enter word to search")
+	var find = sentence.indexOf(search)
+	if (find == -1){
+		alert("Word is not found");
+	} else {
+		alert("Word is present at " + find + " position")
+	}
+
+	//find and replace
+	var re = /apples/gi;
+	var phrase = "Apples are round and apples are juicy";
+	var new_str = phrase.replace(re, "oranges");
+	console.log(new_str);
+</script>
+</body>
+</html>

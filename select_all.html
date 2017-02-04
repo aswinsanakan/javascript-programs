@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select All</title>
+</head>
+<body>
+	<input type="checkbox" id="selectAll"> Select All
+	<input type="button" id="delete" value="Delete All" style="display: none"> <br> 
+	<div id="players">
+		<input type="checkbox" id="sachin" > Sachin <br>
+		<input type="checkbox" id="virat"> Virat <br>
+		<input type="checkbox" id="dhoni"> Dhoni <br>
+		<input type="checkbox" id="dravid"> Dravid <br>	
+		<input type="checkbox" id="ganguly"> Ganguly <br>
+	</div>
+	
+	
+	
+
+	<script>
+		
+		var selectAllHandle = document.getElementById('selectAll');
+		var deleteHandle = document.getElementById('delete');
+		var playersHandle = document.getElementById('players');
+
+
+		function loopPlayersList(){
+			var playersList = playersHandle.getElementsByTagName('input');
+			for (var i = 0; i < playersList.length; i++) {
+				if (selectAllHandle.checked){
+					playersList[i].checked = true;	
+				} else {
+					playersList[i].checked = false;
+				}
+			}	
+		}
+
+
+		function togglePlayersChecked() {
+			if(selectAllHandle.checked) {
+				loopPlayersList();
+				deleteHandle.style.display = "block";
+			}else{
+				loopPlayersList();
+				deleteHandle.style.display = "none";
+			}	
+		}
+	
+
+		selectAllHandle.onclick = function(){
+			togglePlayersChecked();
+		}
+
+		deleteHandle.onclick = function (){
+			var playersList = playersHandle.getElementsByTagName('input');
+			for (var j = 0; j < playersList.length; j++) {
+				//playersList[i].type = "radio";
+				playersList[j].parentNode.removeChild(playersList[j]);
+				console.log(playersList[j]);
+				console.log(playersList[j].parentNode);
+			}
+		}
+
+		
+
+
+	</script>
+</body>
+</html>

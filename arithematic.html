@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arithematic</title>
+</head>
+<body>
+	<p>arithematic(10,20,"add") : <span id="v1"> </span></p>
+	<p>arithematic(20,30,"multiply") : <span id="v2"> </span></p>
+	<script>
+		function arithematic(n1,n2,operator){
+			if(operator == "add"){
+				return n1 + n2;
+			}else if(operator == "multiply"){
+				return n1 * n2;
+			}else {
+				return "Invalid Operator"
+			}
+		}
+		var value1 = arithematic(10,20,"add");
+		var value2 = arithematic(20,30,"multiply");
+		var v1Handle = document.getElementById("v1");
+		var v2Handle = document.getElementById("v2");
+
+		v1Handle.innerHTML = value1;
+		v2Handle.innerHTML = value2;
+
+		var i = 0;
+		while (i<=10){
+		  console.log(i);
+		  i++;
+		}
+
+		var i = 0;
+		for(var i = 0; i<= 10; i++){
+		  console.log(i);
+		}
+
+		var i =0;
+		do{
+		  console.log(i);
+		  i++;
+		}while(i<=10);
+		
+	</script>
+</body>
+</html>
+

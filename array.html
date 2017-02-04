@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+</head>
+<body>
+	
+	<h3>Schools</h3>
+	<ul>
+		<span id="schoolsList"></span>		
+	</ul>
+
+<script>
+	//var names = new Array();
+	//var mobile = Array();
+	var schools = ["SMPS","VVB","Rajagiri","Nirmala"];
+	var boards = new Array(4);
+	var ib_boards = ["cambridge", "ib"]
+	var total = 4;
+
+	console.log(schools); //Original array
+	console.log(schools.reverse()); //reversed array (permanent change to array)
+	console.log(schools); //reversed array
+	console.log(schools.join(', ')); //reversed joined
+	console.log(schools); //sorted
+	console.log(Array.isArray(schools)); //true -- checks is array or not
+	console.log(Array.isArray(total)); //false
+	boards.fill("cbse"); //fills the array with "cbse"
+	console.log(boards);
+	schools.push("TISB"); //pushes "TISB" to the end of array
+	console.log(schools);
+	schools.unshift("Indus International") //adds Indus International to beginning of array
+	console.log(schools);
+	console.log(boards.concat(ib_boards)); //concatinates arrays - boards and ib_boards
+	console.log(schools);
+	console.log(schools.splice(0,3)); //chop off from Oth to 3rd index and ouputs as an array
+	console.log(schools);	//remaining array after Splicing is output
+	console.log(schools.includes("TISB")); //checks if included
+	console.log(schools.includes("APS"));
+	console.log(schools.indexOf("TISB")); //returns of index of the value
+	console.log(schools.indexOf("APS")); //returns -1 since value is not present
+
+
+	// find_all alternative in javascript
+	var marks = [75,48,66,80,41,55]
+
+	function select1Class(mark){
+		return mark > 60;
+	}
+
+	function select2Class(mark){
+		return (mark >= 40 && mark < 60);
+	}
+
+	var firstClass = marks.filter(select1Class); //finds all the values that satisfy the criteria in the array
+	console.log(firstClass);
+
+	var secondClass = marks.filter(select2Class);
+	console.log(secondClass);
+	
+	//find the first value that satisfies the criteria the criteria in the array 
+	var result = marks.find(select1Class);
+	console.log(result);
+
+	//for loop
+	var schools = ["TEWS", "GWH", "Auden", "BHSS"];
+	for(var i=0; i < schools.length; i++){
+		console.log(schools[i]);
+	}
+
+	console.log("Total schools ", schools.length);
+
+	//ruby - each loop alternative
+	var list = "";
+	schools.forEach(function(school){
+		//console.log(school);
+		list += "<li>" + school + "</li>" //creating a li tag with each school name
+	})
+
+	var schoolsList = document.getElementById("schoolsList")
+	schoolsList.innerHTML = list;
+
+	//Find sum of the array
+	var prices = [125,300,175,100.50];
+	var sum = 0;
+	prices.forEach(function(price){
+		sum += price;
+	})
+	console.log("Sum is ", sum)
+
+</script>
+</body>
+</html>

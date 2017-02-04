@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task Box - Creating elements via JS</title>
+</head>
+<body>
+	<h3>Listing Tasks (Pure way)</h3>
+	<p id="msg"></p>
+	<ul id="myTask"></ul>
+	<button id="addTask">
+		Add Task
+	</button>
+
+	<h3>Listing Other Tasks (lazy way)</h3>
+	<p id="msg2"></p>
+	<ul id="myTask2"></ul>
+	<button id="addTask2">
+		Add Task
+	</button>
+
+	<script>
+		//Actual pure way of JS
+		var buttonHandle = document.getElementById('addTask');
+		var myTasks = document.getElementsByTagName('li');
+
+		if(myTasks.length == 0){
+			document.getElementById('msg').innerHTML = "No tasks added, Add your first task";
+		}
+
+		buttonHandle.onclick = function(){
+			var taskHandle = document.getElementById('myTask');
+			var myList = document.createElement('li'); // <li> </li>	
+			var task = prompt("Enter a task");
+			if ((task != null) && (task != '')){
+				var listName = document.createTextNode(task);
+				myList.appendChild(listName);
+				taskHandle.appendChild(myList);	
+				document.getElementById('msg').innerHTML = "";	
+			}
+		};
+		
+		//Lazy and popular way
+		var buttonHandle = document.getElementById('addTask2');
+		if(myTasks.length == 0){
+			document.getElementById('msg2').innerHTML = "No tasks added, Add your first task";
+		}
+		var output = '';
+		buttonHandle.onclick = function(){
+			var taskHandle = document.getElementById('myTask2');
+			output += '<li>'
+			var task = prompt("Enter a task");
+			if ((task != null) && (task != '')){
+				output += task;
+				output += '</li>'
+				taskHandle.innerHTML = output;
+				console.log(output);
+				document.getElementById('msg2').innerHTML = "";	
+			}
+		};
+
+	</script>
+</body>
+</html>
